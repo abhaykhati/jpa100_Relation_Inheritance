@@ -1,0 +1,25 @@
+// in oneToMany relationship hibernate default fetching is lazy it is true in case of Many to Many as well
+// in ManyToOne relationship hibernate default fetching is eager using left outer join it is true in case of oneToOne relationship as well
+
+SELECT * FROM STUDENT_COURSE , COURSE ,STUDENT 
+where STUDENT_COURSE.STUDENT_ID =STUDENT.ID
+AND STUDENT_COURSE.COURSE_ID=COURSE.ID
+
+2018-09-19 16:22:47.673 DEBUG 9124 --- [           main] org.hibernate.SQL         
+               : 
+select student0.id as id130, 
+student0.name as name230,
+ student0.passportid as passport330, 
+ passport1.id as id111, 
+ passport1.number as number211 
+ from student student0 
+ left outer join passport passport1 
+ on student0.passportid=passport1.id 
+ where student0.id=?
+ 
+ select * from course, review 
+where course.id =review.course_id 
+
+select * from review  where course_id in(10003);
+ 
+Hibernate: select student0.id as id130, student0.name as name230, student0.passportid as passport330, passport1.id as id111, passport1.number as number211 from student student0 left outer join passport passport1 on student0.passportid=passport1.id where student0.id=?
