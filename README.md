@@ -1,0 +1,2 @@
+# jpa100_Relation_Inheritance
+jpa_in_100_steps_Relationships_Inheritance_Code
