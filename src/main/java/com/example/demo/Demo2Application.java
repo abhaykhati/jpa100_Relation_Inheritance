@@ -44,20 +44,26 @@ public class Demo2Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		employeeRepository.insert(new FullTimeEmployee("Abhay", new BigDecimal("10000")));
+	/*	employeeRepository.insert(new FullTimeEmployee("Abhay", new BigDecimal("10000")));
 		
 		employeeRepository.insert(new PartTimeEmployee("Anand", new BigDecimal("50")));
 		
 		logger.info(" PartTimeEmployee=   "+ employeeRepository.getPartTimeEmployee());// in case of @MappedSuperclass
 		logger.info(" FullTimeEmployee=   "+ employeeRepository.getFullTimeEmployee()); //in case of @MappedSuperclass
 		
+		*/
 		
-		
-	    /*   // due to @MappedSuperclass since employee is not an Entity anymore in this case
-		 logger.info(" All Employees=   "+ employeeRepository.getAllEmployees());*/
+	       // due to @MappedSuperclass since employee is not an Entity anymore in this case
+		// logger.info(" All Employees=   "+ employeeRepository.getAllEmployees());
     
 		
 	//=======================================================================================	
+		
+		studentrepository.joinForStudentAndCourses();
+		
+		studentrepository.leftJoinForStudentAndCourses();
+		
+		studentrepository.crossJoinForStudentAndCourses();
 		
 
 		/*
