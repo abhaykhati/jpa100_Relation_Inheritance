@@ -18,6 +18,7 @@ import com.example.demo.entity.FullTimeEmployee;
 import com.example.demo.entity.PartTimeEmployee;
 import com.example.demo.entity.Student;
 import com.example.demo.repository.CourseRepository;
+import com.example.demo.repository.CriteriaQueryRepository;
 import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.repository.StudentRepository;
 
@@ -35,6 +36,9 @@ public class Demo2Application implements CommandLineRunner {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
+	@Autowired
+	private CriteriaQueryRepository criteriaQueryRepository;
+	
 	
 
 	public static void main(String[] args) {
@@ -44,27 +48,41 @@ public class Demo2Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-	/*	employeeRepository.insert(new FullTimeEmployee("Abhay", new BigDecimal("10000")));
+		criteriaQueryRepository.CriteriaBasic();
 		
-		employeeRepository.insert(new PartTimeEmployee("Anand", new BigDecimal("50")));
 		
-		logger.info(" PartTimeEmployee=   "+ employeeRepository.getPartTimeEmployee());// in case of @MappedSuperclass
-		logger.info(" FullTimeEmployee=   "+ employeeRepository.getFullTimeEmployee()); //in case of @MappedSuperclass
 		
-		*/
 		
-	       // due to @MappedSuperclass since employee is not an Entity anymore in this case
-		// logger.info(" All Employees=   "+ employeeRepository.getAllEmployees());
+		
+		/*  inheritance examples followed
+		 * 
+		 * employeeRepository.insert(new FullTimeEmployee("Abhay", new
+		 * BigDecimal("10000")));
+		 * 
+		 * employeeRepository.insert(new PartTimeEmployee("Anand", new
+		 * BigDecimal("50")));
+		 * 
+		 * logger.info(" PartTimeEmployee=   "+
+		 * employeeRepository.getPartTimeEmployee());// in case of @MappedSuperclass
+		 * logger.info(" FullTimeEmployee=   "+
+		 * employeeRepository.getFullTimeEmployee()); //in case of @MappedSuperclass
+		 * 
+		 */
+
+		// due to @MappedSuperclass since employee is not an Entity anymore in this case
+		// logger.info(" All Employees= "+ employeeRepository.getAllEmployees());
     
 		
 	//=======================================================================================	
 		
-		studentrepository.joinForStudentAndCourses();
+		/*  join examples follows
+		 * 
+		 * studentrepository.joinForStudentAndCourses();
 		
 		studentrepository.leftJoinForStudentAndCourses();
 		
 		studentrepository.crossJoinForStudentAndCourses();
-		
+		*/
 
 		/*
 		 * Course course = repository.findByID(10001l);

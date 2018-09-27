@@ -101,6 +101,14 @@ public class StudentRepository {
 			logger.info("Course{}, Student{} ", result[0], result[1]);
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 * public void insertIntoStudentAndCourse() {
 	 * 
