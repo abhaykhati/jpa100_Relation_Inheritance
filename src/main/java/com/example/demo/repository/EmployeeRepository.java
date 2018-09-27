@@ -14,6 +14,8 @@ import com.example.demo.entity.PartTimeEmployee;
 
 @Repository
 @Transactional
+//use spring transaction management rather than 
+//java.persistence.transaction because spring transaction supports multiple databases at the same time
 
 public class EmployeeRepository {
 

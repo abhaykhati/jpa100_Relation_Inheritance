@@ -17,7 +17,8 @@ import com.example.demo.entity.Passport;
 import com.example.demo.entity.Student;
 
 @Repository
-@Transactional
+@Transactional //use spring transaction management rather than 
+//java.transaction.Transactional because spring transaction supports multiple databases at the same time
 
 public class StudentRepository {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
