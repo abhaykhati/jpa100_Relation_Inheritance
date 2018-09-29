@@ -5,12 +5,15 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Review;
+import com.example.demo.entity.ReviewRating;
 
 @Repository
 @Transactional
@@ -18,7 +21,9 @@ import com.example.demo.entity.Review;
 //java.transaction.Transactional because spring transaction supports multiple databases at the same time
 
 public class CourseRepository {
-
+	
+	private Logger logger=LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	EntityManager em;
 
@@ -98,6 +103,16 @@ public class CourseRepository {
 			em.persist(r);
 		}
 		
+	}
+	
+	public void addHardCodedReviewsForCourseUsingEnum() {
+		
+		Course course=findByID(10003L);
+		logger.info("course.getReviews=  ", course.getReviews());
+		
+		// add 2 reviews to course
+		Review review= new Review(ReviewRating.FIVE, "great hands-on-stuff");
+		Review review2= new Review(ReviewRating.THREE, "OK COURSE,NOTHING NEW TO LEARN");
 	}
 	
 	/*public void addHardCodedReviewsForCourses() {

@@ -1,15 +1,15 @@
 -- Course insertion
-insert into course (id, name, updaed_Date, created_Date) 
-values (10001,'JPA IN 50 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into course (id, name, updaed_Date, created_Date,is_deleted) 
+values (10001,'JPA IN 50 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(),false);
 
-insert into course (id, name,updaed_Date, created_Date) 
-values (10002,'Spring IN 100 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into course (id, name,updaed_Date, created_Date,is_deleted) 
+values (10002,'Spring IN 100 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(),false);
 
-insert into course (id, name,updaed_Date, created_Date) 
-values (10003,'spring boot IN 50 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into course (id, name,updaed_Date, created_Date,is_deleted) 
+values (10003,'spring boot IN 50 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(),false);
 
-insert into course (id, name,updaed_Date, created_Date) 
-values (10004,'Unit test IN 10 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP());
+insert into course (id, name,updaed_Date, created_Date,is_deleted) 
+values (10004,'Unit test IN 10 STEPS', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(),false);
 
 
 --Review insertion

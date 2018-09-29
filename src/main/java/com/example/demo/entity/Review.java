@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -21,10 +23,11 @@ public class Review {
 	@ManyToOne  // in ManyToOne relationship hibernate default fetching is eager using left outer join it is true in case of oneToOne relationship as well
 	private Course course;
 	
-	@Column(name = "rating", nullable = true)
-	private Long rating;
+	@Column(name = "rating" )
+	@Enumerated(EnumType.STRING)
+	private ReviewRating rating;
 	
-	public Review(Long rating,String description) {
+	public Review(ReviewRating rating,String description) {
 		this.rating=rating;
 		this.description=description;
 	}
@@ -40,11 +43,11 @@ public class Review {
 
 
 
-	public Long getRating() {
+	public ReviewRating getRating() {
 		return rating;
 	}
 
-	public void setRating(Long rating) {
+	public void setRating(ReviewRating rating) {
 		this.rating = rating;
 	}
 
