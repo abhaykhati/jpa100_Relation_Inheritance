@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +16,11 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Course")
+@Cacheable
 public class Course {
 
 	@Id
@@ -33,6 +37,7 @@ public class Course {
 	private LocalDateTime updaed_Date;
 	
 	@ManyToMany(mappedBy="courses")
+	//@JsonIgnore
 	List<Student> students=new ArrayList<>();
 	
 	

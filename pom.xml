@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.5.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -25,6 +26,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>4.3.5.Final</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -58,31 +66,26 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	<sourceDirectory>E:\STS_Workspace\demo2\src\main\java</sourceDirectory>
-    <scriptSourceDirectory>E:\STS_Workspace\demo2\src\main\scripts</scriptSourceDirectory>
-    <testSourceDirectory>E:\STS_Workspace\demo2\src\test\java</testSourceDirectory>
-    <outputDirectory>E:\STS_Workspace\demo2\target\classes</outputDirectory>
-    <testOutputDirectory>E:\STS_Workspace\demo2\target\test-classes</testOutputDirectory>
-    <resources>
-      <resource>
-        <filtering>true</filtering>
-        <directory>E:\STS_Workspace\demo2\src\main\resources</directory>
-        <includes>
-          <include>**/application*.yml</include>
-          <include>**/application*.yaml</include>
-          <include>**/application*.properties</include>
-          <include>**/data.sql</include>
-        </includes>
-      </resource>
-    <!--   <resource>
-        <directory>E:\STS_Workspace\demo2\src\main\resources</directory>
-        <excludes>
-          <exclude>**/application*.yml</exclude>
-          <exclude>**/application*.yaml</exclude>
-          <exclude>**/application*.properties</exclude>
-        </excludes>
-      </resource> -->
-    </resources>
+		<sourceDirectory>E:\STS_Workspace\demo2\src\main\java</sourceDirectory>
+		<scriptSourceDirectory>E:\STS_Workspace\demo2\src\main\scripts</scriptSourceDirectory>
+		<testSourceDirectory>E:\STS_Workspace\demo2\src\test\java</testSourceDirectory>
+		<outputDirectory>E:\STS_Workspace\demo2\target\classes</outputDirectory>
+		<testOutputDirectory>E:\STS_Workspace\demo2\target\test-classes</testOutputDirectory>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>E:\STS_Workspace\demo2\src\main\resources</directory>
+				<includes>
+					<include>**/application*.yml</include>
+					<include>**/application*.yaml</include>
+					<include>**/application*.properties</include>
+					<include>**/data.sql</include>
+				</includes>
+			</resource>
+			<!-- <resource> <directory>E:\STS_Workspace\demo2\src\main\resources</directory> 
+				<excludes> <exclude>**/application*.yml</exclude> <exclude>**/application*.yaml</exclude> 
+				<exclude>**/application*.properties</exclude> </excludes> </resource> -->
+		</resources>
 	</build>
 
 
